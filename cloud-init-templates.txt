@@ -1,0 +1,13 @@
+
+1. ubuntu-cloud-small
+    specs:
+        Memory:     2GB
+        Cores:      1
+        Display:    default
+        HardDisk:   32GB
+2. ubuntu-cloud-standard
+    specs:
+        Memory:     4GB
+        Cores:      2
+        Display:    default
+        HardDisk:   64GB

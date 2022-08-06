@@ -1,7 +1,7 @@
 1. Run command to create vm
 qm create <devicenumber> --memory <desiredmemory> --name <nameinproxmox> --net0 <driver>,bridge=<nicname>
 
-qm create 8000 --memory 2048 --name ubuntu-cloud --net0 virtio,bridge=vmbr0
+qm create 8000 --memory 2048 --name ubuntu-cloud-small --net0 virtio,bridge=vmbr0
 
 2. Import the disk for the new machine
 qm importdisk <devicenumber> <nameofimage> <nameofstorage>
@@ -35,4 +35,10 @@ qm set 8000 --serial0 socket --vga serial0
 8. This covers the base requirements for setting the VM up. From here any additional changes can be made
 	- under Cloud-Init consider setting IP to dhcp as it defaults to static
 	- set a username and password or supply an ssh key for login credential.
+
+9. Changed my display option from serial to default. 
+
+10. Created a template from the VM. 
+
+
 
