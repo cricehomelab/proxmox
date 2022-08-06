@@ -1,3 +1,5 @@
+Overview of how to create a cloud init template. 
+
 1. Run command to create vm
 qm create <devicenumber> --memory <desiredmemory> --name <nameinproxmox> --net0 <driver>,bridge=<nicname>
 
