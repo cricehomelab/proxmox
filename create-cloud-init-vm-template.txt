@@ -9,7 +9,7 @@ qm importdisk <devicenumber> <nameofimage> <nameofstorage>
 qm import disk 8000 jammy-server-clouding-amd64.img local-lvm
 
 3. adding a scsi controller, adding a scsi drive, connecting the uploaded disk
-qm set <devicenumber> -scsihw virtio-scsi-pc --scsi0 <storagelocation>:<nameofdisk>
+qm set <devicenumber> -scsihw virtio-scsi-pci --scsi0 <storagelocation>:<nameofdisk>
 
 qm set 8000 -scsihw virtio-scsi-pci --scsi0 local-lvm:vm-8000-disk-0
 
