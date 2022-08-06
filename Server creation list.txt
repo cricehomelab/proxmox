@@ -5,6 +5,8 @@ Server creation list
     B. Server template: ubuntu-server-standard
     C. Function: Puppetmaster for homelab production (TODO: Install puppetmaster)
     D. GitlabRepo: puppet-homelab (TODO: Create Repo)
+    E. Infrastructyure Backup: need to create backup image once puppet is functional.
+        i. Need to verify able to restore backup. 
 2. janus-main
     A. IP Address: 192.168.50.128
     B. Server Template: ubuntu-server-small
