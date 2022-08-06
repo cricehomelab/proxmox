@@ -1,0 +1,38 @@
+1. Run command to create vm
+qm create <devicenumber> --memory <desiredmemory> --name <nameinproxmox> --net0 <driver>,bridge=<nicname>
+
+qm create 8000 --memory 2048 --name ubuntu-cloud --net0 virtio,bridge=vmbr0
+
+2. Import the disk for the new machine
+qm importdisk <devicenumber> <nameofimage> <nameofstorage>
+
+qm import disk 8000 jammy-server-clouding-amd64.img local-lvm
+
+3. adding a scsi controller, adding a scsi drive, connecting the uploaded disk
+qm set <devicenumber> -scsihw virtio-scsi-pc --scsi0 <storagelocation>:<nameofdisk>
+
+qm set 8000 -scsihw virtio-scsi-pci --scsi0 local-lvm:vm-8000-disk-0
+
+4. In the Proxmox GUI I resized the drive to be 32GB
+	-Under the <devicenumber> went to Hardware > Hard Disk > Disk Action > Resize
+	-Set the desired size. 
+
+CloudInit drive Configuration.
+
+5. Creating a virtual CD-ROM and attaching it to the virtual machine
+qm set <devicenumber> --ide2 <nameofstorage>:cloudinit
+
+qm set 8000 --ide2 local-lvm:cloudinit
+
+6. Boot from cloud init drive directly. 
+
+qm set 8000 --boot c --bootdisk scsi0
+
+7. Enable a serial console
+
+qm set 8000 --serial0 socket --vga serial0
+
+8. This covers the base requirements for setting the VM up. From here any additional changes can be made
+	- under Cloud-Init consider setting IP to dhcp as it defaults to static
+	- set a username and password or supply an ssh key for login credential.
+
