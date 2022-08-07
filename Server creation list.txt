@@ -3,13 +3,13 @@ Server creation list
 1. geppetto-main
     A. IP Address: 192.168.50.127
     B. Server template: ubuntu-server-standard
-    C. Function: Puppetmaster for homelab production (TODO: Install puppetmaster)
-    D. GitlabRepo: puppet-homelab (TODO: Create Repo)
-    E. Infrastructyure Backup: need to create backup image once puppet is functional.
-        i. Need to verify able to restore backup. 
+    C. Function: Puppetmaster for homelab production
+        i. Puppetmaster installed and configured.
+    D. GitlabRepo: puppet-homelab (TODO: Create Repo)    
 2. janus-main
     A. IP Address: 192.168.50.128
     B. Server Template: ubuntu-server-small
-    C. Function: pi-hole (DNS server)
-    D. TODO: get puppet installed. Create module to install and configure pi-hole.
+    C. Function: pi-hole (DNS server) (TODO get pihole installed)
+    D. server is a puppet node. 
+
 
